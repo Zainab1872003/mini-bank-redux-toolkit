@@ -1,17 +1,25 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import axios from 'axios';
+import axiosInstance from '../API_calls/axiosInstance';
+import { ACCOUNT_ENDPOINT } from '../constants';
 
 const initialState = {
   amount: 1,
 }
 
+
+
 export const fetchUserById = createAsyncThunk(
   'account/getUser',
   async (userId, thunkAPI) => {
-    const {data} = await axios.get(`http://localhost:8080/accounts/${userId}`);
-    return data.amount;
-  },
-)
+    try {
+      const { data } = await axiosInstance.get(`${ACCOUNT_ENDPOINT}/${userId}`);
+      return data.amount;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response?.data || error.message);
+    }
+  }
+);
+
 
 export const accountSlice = createSlice({
   name: 'account',
