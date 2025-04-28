@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import axiosInstance from '../API_calls/axiosInstance';
-import { ACCOUNT_ENDPOINT } from '../constants';
+import axiosInstance from '../../axiosInstance';
+import { ACCOUNT_ENDPOINT } from '../../constants';
 
 const initialState = {
   amount: 1,

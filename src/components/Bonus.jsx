@@ -1,6 +1,6 @@
 
 import {useDispatch,useSelector} from 'react-redux';
-import {increment} from '../slices/bonusSlice';
+import {increment} from '../redux/slices/bonusSlice';
 
 const Bonus = () => {
   

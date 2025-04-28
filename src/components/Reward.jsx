@@ -1,7 +1,6 @@
 
 import {useDispatch,useSelector} from 'react-redux';
-import { increment ,incrementbyAmount} from '../reducers/reward';
-import { incrementByAmount } from '../slices/accountSlice';
+import { increment ,incrementbyAmount} from '../redux/reducers/reward';
 import { useState } from 'react';
 
 function Reward(){
